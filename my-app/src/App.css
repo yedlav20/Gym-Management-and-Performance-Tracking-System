@@ -1,0 +1,98 @@
+/* Poppins font for bold headings */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+:root{
+  --lav-600:#6f42c1;
+  --lav-400:#9d7aff;
+  --bg-1:#fbf7ff;
+  --card:#ffffff;
+  --muted:#6b5f8a;
+  --ink:#23143a;
+  --accent: linear-gradient(180deg,#9d7aff,#6f42c1);
+}
+
+/* Basics */
+*{box-sizing:border-box}
+html,body,#root{height:100%;margin:0;font-family:"Poppins",system-ui, -apple-system, "Segoe UI", Roboto, Arial;color:var(--ink);background:var(--bg-1)}
+.App{position:relative;min-height:100vh;overflow-x:hidden;padding-bottom:80px}
+
+/* Decorative animated blobs & rings */
+.decor{position:absolute;inset:0;pointer-events:none;z-index:0}
+.blob{position:absolute;border-radius:48%;filter:blur(36px);opacity:.22;transform:translateZ(0);animation:float 8s ease-in-out infinite}
+.blob.b1{width:420px;height:420px;left:-120px;top:-120px;background:radial-gradient(circle at 30% 30%, #f6edff 0%, #e8ddff 40%, rgba(157,122,255,0.16) 70%)}
+.blob.b2{width:300px;height:300px;right:-80px;top:40px;background:linear-gradient(180deg,#efe7ff,#e6dcff);animation-duration:10s;opacity:.2}
+.ring{position:absolute;border-radius:50%;border:2px dashed rgba(157,122,255,0.12);width:200px;height:200px;right:10%;top:40%;transform:translateZ(0);animation:spin 18s linear infinite;opacity:.22}
+.ring.r1{right:-40px;top:200px;width:280px;height:280px}
+.ring.r2{left:-80px;bottom:-40px;width:200px;height:200px;animation-duration:22s;opacity:.12}
+@keyframes float{0%{transform:translateY(-6px)}50%{transform:translateY(6px)}100%{transform:translateY(-6px)}}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+/* Hero */
+.hero{position:relative;z-index:2;padding:24px 12px 6px;text-align:center;margin-bottom:0}
+.hero-graphic{width:100%;height:120px;display:block}
+.hero-text{margin-top:-60px}
+.hero h1{font-size:clamp(20px,3.6vw,36px);margin:0;color:var(--lav-600);font-weight:800;letter-spacing:-0.6px}
+.lead{margin:8px 0 0;color:var(--muted);font-weight:600}
+
+/* Layout */
+.container{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:20px;width:min(1200px,94%);margin:18px auto 40px;align-items:start}
+@media(min-width:920px){.container{grid-template-columns:1fr 360px;gap:28px}}
+
+/* Cards */
+.card{background:linear-gradient(180deg,var(--card),#fbf8ff);border-radius:14px;padding:18px;box-shadow:0 18px 40px rgba(80,40,150,0.06);border:1px solid rgba(140,115,255,0.08);position:relative}
+.form-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.pill{background:linear-gradient(90deg,#fff,#fbf7ff);padding:6px 10px;border-radius:999px;border:1px solid rgba(120,80,200,0.06);color:var(--lav-600);font-weight:700;font-size:13px}
+
+/* Form */
+.client-form{display:flex;flex-direction:column;gap:10px}
+.field{display:flex;align-items:center;gap:10px}
+.field-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbf8ff);display:flex;align-items:center;justify-content:center;border:1px solid rgba(157,122,255,0.08)}
+.client-form input{flex:1;padding:12px 14px;border-radius:10px;border:2px solid rgba(157,122,255,0.18);background:#fff;font-weight:700;color:#2b1b46;font-size:15px}
+.client-form input::placeholder{color:rgba(43,27,70,0.4);font-weight:600}
+.client-form input:focus{outline:none;border-color:var(--lav-400);box-shadow:0 10px 30px rgba(157,122,255,0.12);transform:translateY(-2px)}
+
+/* Buttons */
+.actions{display:flex;gap:12px;margin-top:6px}
+.btn{flex:1;padding:12px;border-radius:12px;font-weight:800;border:none;cursor:pointer;color:white;background:linear-gradient(180deg,#9d7aff,#6f42c1);box-shadow:0 12px 28px rgba(111,66,193,0.12);transition:transform .12s,box-shadow .12s}
+.btn.clear{background:transparent;color:var(--lav-600);border:1px solid rgba(120,80,200,0.06)}
+.btn.small{padding:8px 10px;font-size:13px}
+
+/* List */
+.list-title{margin:0 0 12px;font-weight:800;color:#3b2160}
+.empty{color:var(--muted);padding:10px 0}
+.client-list{display:flex;flex-direction:column;gap:10px}
+.client-row{display:flex;align-items:center;padding:10px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbf8ff);border:1px solid #efe6ff;box-shadow:0 10px 24px rgba(60,30,100,0.04)}
+.avatar{width:52px;height:52px;border-radius:12px;background:linear-gradient(180deg,#dcbcff,#9d7aff);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:16px;margin-right:12px;flex-shrink:0;box-shadow:0 8px 20px rgba(111,66,193,0.12)}
+.cinfo{flex:1}
+.cname{font-weight:900;color:#3b2160}
+.cmeta{color:var(--muted);font-size:13px;margin-top:6px}
+.row-actions{display:flex;gap:8px}
+.tiny{padding:8px 10px;border-radius:8px;border:none;background:transparent;color:var(--lav-600);font-weight:800;cursor:pointer}
+.tiny.danger{color:#b00020}
+
+/* Right column */
+.stats-card h4{margin:0 0 12px;font-size:15px;color:#3b2160;font-weight:900}
+.stats-grid{display:flex;gap:12px;margin-bottom:12px}
+.stat{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbf8ff);text-align:center;border:1px solid #eee6ff}
+.sval{font-weight:900;color:var(--lav-600);font-size:22px}
+.slabel{color:var(--muted);font-weight:800;margin-top:6px;font-size:13px}
+.upcoming h5{margin:0 0 8px;font-weight:900;color:#4a2e8a}
+.up-row{display:flex;align-items:center;gap:10px;padding:8px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbf8ff);border:1px dashed rgba(140,115,255,0.12);margin-bottom:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,#9d7aff,#6f42c1);box-shadow:0 8px 20px rgba(111,66,193,0.12)}
+.up-info{flex:1}
+.up-name{font-weight:800;color:#3b2160}
+.up-meta{color:var(--muted);font-size:13px}
+
+/* Promo */
+.promo-card h4{margin:0 0 6px;font-weight:900}
+.promo-actions{display:flex;gap:8px;margin-top:12px}
+
+/* Footer */
+.footer{text-align:center;color:var(--muted);padding:18px 0}
+
+/* Responsive */
+@media(max-width:720px){
+  .container{grid-template-columns:1fr;padding:0 10px}
+  .decor .ring{display:none}
+  .actions{flex-direction:column}
+}
