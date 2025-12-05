@@ -1,0 +1,199 @@
+/* src/features/users/UserManagement.css */
+
+.um-page {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  
+  .um-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+  
+  .um-header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+  
+  .um-subtitle {
+    margin: 4px 0 0;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  .um-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .um-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+  
+  .um-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  
+  .um-card-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .um-chip {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f2f4f7;
+    font-size: 0.75rem;
+    color: #333;
+  }
+  
+  .um-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .um-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  
+  .um-table th,
+  .um-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .um-table th {
+    background: #fafafa;
+    font-weight: 600;
+  }
+  
+  .um-actions-col {
+    width: 90px;
+    text-align: right;
+  }
+  
+  .um-empty {
+    margin: 0;
+    color: #777;
+  }
+  
+  /* Buttons */
+  
+  .um-button {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  .um-button-primary {
+    background: #2563eb;
+    color: #fff;
+  }
+  
+  .um-button-primary:hover {
+    background: #1d4ed8;
+  }
+  
+  .um-button-danger {
+    background: #ef4444;
+    color: #fff;
+  }
+  
+  .um-button-danger:hover {
+    background: #dc2626;
+  }
+  
+  .um-button-ghost {
+    background: transparent;
+    border: 1px solid #d0d0d0;
+  }
+  
+  .um-button-ghost:hover {
+    background: #f5f5f5;
+  }
+  
+  .um-button-small {
+    padding: 4px 10px;
+  }
+  
+  /* Form */
+  
+  .um-card-form {
+    margin-top: 4px;
+  }
+  
+  .um-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .um-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .um-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .um-field input,
+  .um-field select {
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+  }
+  
+  .um-field input:focus,
+  .um-field select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+  }
+  
+  .um-error {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #b91c1c;
+  }
+  
+  .um-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  
+  /* Responsive */
+  
+  @media (max-width: 640px) {
+    .um-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .um-actions-col {
+      width: auto;
+    }
+  }
+  
